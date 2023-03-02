@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+struct Date {
+day : int
+month : int
+year : int
+ToString() : string
+}
+
+struct Person {
+first_name : string
+last_name : string
+date_of_birth : Date
+sex : char
+}
+Date --> Person
+
+struct Student {
+personal_info : Person
+faculty : string
+group : string
+receipt_date : Date
+}
+Date --> Student
+Person --> Student
+
+struct Teacher {
+personal_info : Person
+subject : string
+employment_date : Date
+}
+Date --> Teacher
+Person --> Teacher
+
+@enduml
